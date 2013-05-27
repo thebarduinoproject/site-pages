@@ -21,9 +21,8 @@
           <h1 id="project_title">The bArduino Project</h1>
           <h2 id="project_tagline">beer management with technology and fun</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/thebarduinoproject/site-pages/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/thebarduinoproject/site-pages/tarball/master">Download this project as a tar.gz file</a>
+            <section id="downloads-custom">
+              <span class="logos"></span>
             </section>
         </header>
     </div>
@@ -36,6 +35,44 @@
       <section class="inner">
         <p>So the purpose of this site is to explain and document a project that was dreampt up as really an excuse to play with an Arduino and a Rasberry Pi.</p>
         <p>Overall, the basic concept is to create some Arduino components that monitor a refrigerator that houses 2 five gallon kegs of home brewed beer, and in turn sends the collected information to a local web server, and can be viewed publicly.</p>
+      </section>
+      
+      <section class="inner">
+      <img src="images/rasberrypi_sm.png" style="width:69px; height:80px;"/>
+      <h3>"brewBerri" a.k.a. Rasberry Pi</h3>
+      <p>
+      So the web server side of the project is a Rasberry Pi, Model B.  I call it the 'brewBerri', since my favorite color is blue (hence the case), but since this is for brewing, I mixed and matched, and came up with a witty (so I think) name.<br /><br />Here is a list of the componets purchased:
+          <ul>
+            <li><a href="http://www.amazon.com/Raspberry-Pi-Model-Revision-512MB/dp/B009SQQF9C/ref=sr_1_1?ie=UTF8&qid=1369683010&sr=8-1&keywords=raspberry+pi" target="blank">Raspberry Pi Model B Revision 2.0 (512MB)</a></li>
+            <li><a href="http://www.amazon.com/Edimax-EW-7811Un-Wireless-Adapter-Wizard/dp/B003MTTJOY/ref=sr_1_1?s=electronics&ie=UTF8&qid=1369683116&sr=1-1&keywords=Edimax+EW-7811Un+150+Mbps+Wireless+11n+Nano+Size+USB+Adapter+with+EZmax+Setup..." target="blank">Edimax EW-7811Un 150 Mbps Wireless 11n Nano USB Adapter</a></li>
+            <li><a href="http://www.amazon.com/Protective-Case-Enclosure-Transparent-Raspberry/dp/B008TDBIDI/ref=sr_1_1?s=electronics&ie=UTF8&qid=1369683176&sr=1-1&keywords=Protective+Case+%2F+Box+%2F+Enclosure+Transparent+%28Blue%29+for+Raspberry+Pi" target="blank">Protective Case (Blue) for Raspberry Pi</a></li>
+            <li><a href="http://www.amazon.com/Raspberry-Debian-Wheezy-Card-Boot/dp/B00AKY92B4/ref=sr_1_1?s=electronics&ie=UTF8&qid=1369683234&sr=1-1&keywords=Raspberry+Pi+Debian+6+%22Wheezy%22+4GB+SD+Card+Boot+Disk" target="blank">Raspberry Pi Debian 6 "Wheezy" 4GB SD Card Boot Disk</a></li>
+            <li><a href="http://www.amazon.com/Logitech-Keyboard-Controller-Revue-Google/dp/B0040QE998/ref=sr_1_1?s=electronics&ie=UTF8&qid=1369683355&sr=1-1&keywords=Logitech+Keyboard+Controller+for+Logitech+Revue+and+Google+TV" target="blank">Logitech Keyboard</a></li>
+          </ul>
+      </p>
+      <p>
+      Images (click for larger):
+      <a href="images/brewberri/01_lg.jpg" target="blank"><img src="images/brewberri/01_sm.jpg" /></a><br />
+      <a href="images/brewberri/02_lg.jpg" target="blank"><img src="images/brewberri/02_sm.jpg" /></a><br />
+      <a href="images/brewberri/03_lg.jpg" target="blank"><img src="images/brewberri/03_sm.jpg" /></a><br />
+      <a href="images/brewberri/04_lg.jpg" target="blank"><img src="images/brewberri/04_sm.jpg" /></a><br />
+      </p>
+      <p>
+      I fnially sat down the other day to set all of this this up...  Five minutes later, after following this <a href="http://www.howtogeek.com/138281/the-htg-guide-to-getting-started-with-raspberry-pi/" target="blank">great write-up</a>:<br />
+      <a href="images/brewberri/05_lg.jpg" target="blank"><img src="images/brewberri/05_sm.jpg" /></a><br />
+      I know, crappy cell phone camera, but to be honest, I was pretty happy that it was successful that quickly.  After nosing around, I went into the `raspb-config`, enabled ssh on boot, rebooted, and disconnected the video cable.  Finally, I jumped back on my local workstation, fired up a terminal, made a ssh connection to the Pi, and 'BAM', I'm in. Now to get functionality on it, here's what I did next:
+      <ol>
+      <li>sudo apt-get install nodejs</li>
+      <li>pi@raspberrypi ~ $ nodejs -v<br />&nbsp;&nbsp;&nbsp;&nbsp;v0.6.19</li>
+      <li>sudo apt-get install npm</li>
+      <li>pi@raspberrypi ~ $ npm -v<br />&nbsp;&nbsp;&nbsp;&nbsp;1.1.4</li>
+      <li>sudo apt-get install git-core</li>
+      <li>pi@raspberrypi ~ $ git --version<br />&nbsp;&nbsp;&nbsp;&nbsp;git version 1.7.10.4</li>
+    </ol>
+      </p>
+      <p>
+      You are probably wondering why I have done what I have done here, so let me explain.  I installed an older version of Node using the package manager, mostly trying to avoid compiling Node manually, which I hear takes a long time on the Pi.  I plan on keeping this as easy as possible, in order to allow others to follow this as easilly as possible.  The other note to make here is Git.  I plan on installing and upgrading the server packages via git as the deployment tool.  Who knows, maybe I'll create an NPM package for all of this down the road, but we will see.  Next on my list it to get a data store.  Mongo DB is a no brainer, but manually compilation seems to be most common, and like Node, the total time to compile is about 25 hrs, ewww..  I may just use a service such as MongoHQ or the likes, and just eat all the HTTP requests...
+      </p>
       </section>
     </div>
 

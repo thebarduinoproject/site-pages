@@ -321,6 +321,26 @@ Full-Width Styles
   text-shadow: #111 0px 0px 10px;
 }
 
+#downloads-custom {
+  position: absolute;
+  width: 210px;
+  z-index: 10;
+  bottom: -40px;
+  right: 0;
+  height: 70px;
+}
+
+.logos {
+  display: block;
+  float: right;
+  width: 210px;
+  height:70px;
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../images/badges.png) no-repeat bottom left;
+  border: 1px solid #000000;
+}
+
 #downloads {
   position: absolute;
   width: 210px;
